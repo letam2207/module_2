@@ -1,8 +1,8 @@
 package ss6_inheritace_polimorhism.bai_tap.lop_point_va_moveablePoint;
 
 public class Point {
-    float x = 0.0f;
-    float y = 0.0f;
+    private float x = 0.0f;
+    private float y = 0.0f;
 
 
     public Point() {
