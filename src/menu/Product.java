@@ -3,9 +3,9 @@ package menu;
 public class Product {
 
 
-    int id;
-    String name;
-    int age;
+   private int id;
+   private String name;
+   private int age;
 
     public Product(int id, String name, int age) {
         this.id = id;

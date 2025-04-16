@@ -1,18 +1,32 @@
 package menu;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ProductManagement {
     Scanner scanner = new Scanner(System.in);
-    public static Product[] products = new Product[100];
+    public static Product[] products = new Product[5];
 
     static {
         products[0] = new Product(1, "Nam", 19);
-        products[1] = new Product(2, "Tâm", 21);
-        products[2] = new Product(3, "Vinh", 20);
+        products[1] = new Product(3, "Tâm", 21);
+        products[2] = new Product(2, "Vinh", 20);
+        products[3] = new Product(5, "Chiến", 20);
+        products[4] = new Product(4, "Huy", 20);
     }
 
     public void displayStudent() {
+//        Arrays.sort(products, new Comparator<Product>() {
+//            @Override
+//            public int compare(Product o1, Product o2) {
+//                //return o1.getId()-o2.getId();   //theo ID
+//                return o1.getName().compareTo(o2.getName());   //theo tên
+//            }
+//        });
+
+        Arrays.sort(products, (p1, p2) -> p1.getId() - p2.getId());   //theo ID (nâng cao)
+      //  Arrays.sort(products,(p1,p2)->p1.getName().compareTo(p2.getName()));  //theo tên (nâng cao)
+
         for (int i = 0; i < products.length; i++) {
             if (products[i] != null) {
                 System.out.println(products[i].toString());
