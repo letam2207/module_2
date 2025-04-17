@@ -28,8 +28,8 @@ public class CarRepository implements ICarRepository {
     }
 
     @Override
-    public void delete(int i) {
-        for (int j = i; j < cars.length; j++ ){
+    public void delete(int carIndex) {
+        for (int j = carIndex; j < cars.length; j++ ){
             if(j == cars.length-1){
                 cars[j] = null;
             }else{

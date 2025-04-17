@@ -27,8 +27,8 @@ public class MotorbikeRepository implements IMotorbikeRepository {
     }
 
     @Override
-    public void delete(int i) {
-        for (int j = i; j < motorbikes.length; j++ ){
+    public void delete(int motorbikeIndex) {
+        for (int j = motorbikeIndex; j < motorbikes.length; j++ ){
             if(j == motorbikes.length-1){
                 motorbikes[j] = null;
             }else{

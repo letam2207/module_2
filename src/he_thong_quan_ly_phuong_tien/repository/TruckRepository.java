@@ -28,8 +28,8 @@ public class TruckRepository implements ITruckRepository {
     }
 
     @Override
-    public void delete(int i) {
-        for (int j = i; j < trucks.length; j++ ){
+    public void delete(int truckIndex) {
+        for (int j = truckIndex; j < trucks.length; j++ ){
             if(j == trucks.length-1){
                 trucks[j] = null;
             }else{
