@@ -1,6 +1,7 @@
-package he_thong_quan_ly_phuong_tien.view;
+package ss10_danh_sach.bai_tap.quan_ly_phuong_tien_bang_arrayList.view;
 
-import he_thong_quan_ly_phuong_tien.controller.VehicleController;
+
+import ss10_danh_sach.bai_tap.quan_ly_phuong_tien_bang_arrayList.controller.VehicleController;
 
 import java.util.Scanner;
 

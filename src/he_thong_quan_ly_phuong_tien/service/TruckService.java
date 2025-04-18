@@ -5,7 +5,7 @@ import he_thong_quan_ly_phuong_tien.repository.ITruckRepository;
 import he_thong_quan_ly_phuong_tien.repository.TruckRepository;
 
 public class TruckService implements ITruckService{
-    private ITruckRepository truckRepository = new TruckRepository();
+    private final ITruckRepository truckRepository = new TruckRepository();
 
 
     @Override

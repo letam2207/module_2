@@ -1,20 +1,21 @@
-package he_thong_quan_ly_phuong_tien.controller;
+package ss10_danh_sach.bai_tap.quan_ly_phuong_tien_bang_arrayList.controller;
 
-import he_thong_quan_ly_phuong_tien.entity.Car;
-import he_thong_quan_ly_phuong_tien.entity.Motorbike;
-import he_thong_quan_ly_phuong_tien.entity.Truck;
-import he_thong_quan_ly_phuong_tien.entity.Vehicle;
-import he_thong_quan_ly_phuong_tien.service.CarService;
-import he_thong_quan_ly_phuong_tien.service.MotorbikeService;
-import he_thong_quan_ly_phuong_tien.service.TruckService;
-import he_thong_quan_ly_phuong_tien.view.CarView;
-import he_thong_quan_ly_phuong_tien.view.MotorbikeView;
-import he_thong_quan_ly_phuong_tien.view.TruckView;
-import he_thong_quan_ly_phuong_tien.view.View;
 
+import ss10_danh_sach.bai_tap.quan_ly_phuong_tien_bang_arrayList.entity.Car;
+import ss10_danh_sach.bai_tap.quan_ly_phuong_tien_bang_arrayList.entity.Motorbike;
+import ss10_danh_sach.bai_tap.quan_ly_phuong_tien_bang_arrayList.entity.Truck;
+import ss10_danh_sach.bai_tap.quan_ly_phuong_tien_bang_arrayList.service.CarService;
+import ss10_danh_sach.bai_tap.quan_ly_phuong_tien_bang_arrayList.service.MotorbikeService;
+import ss10_danh_sach.bai_tap.quan_ly_phuong_tien_bang_arrayList.service.TruckService;
+import ss10_danh_sach.bai_tap.quan_ly_phuong_tien_bang_arrayList.view.CarView;
+import ss10_danh_sach.bai_tap.quan_ly_phuong_tien_bang_arrayList.view.MotorbikeView;
+import ss10_danh_sach.bai_tap.quan_ly_phuong_tien_bang_arrayList.view.TruckView;
+import ss10_danh_sach.bai_tap.quan_ly_phuong_tien_bang_arrayList.view.View;
+
+import java.util.List;
 import java.util.Scanner;
 
-public class VehicleContronller {
+public class VehicleController {
     public static TruckService truckService = new TruckService();
     public static CarService carService = new CarService();
     public static MotorbikeService motorbikeService = new MotorbikeService();
@@ -31,15 +32,16 @@ public class VehicleContronller {
             int choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
                 case 1:
-                    VehicleContronller.addVehicle();
+                    VehicleController.addVehicle();
                     break;
                 case 2:
-                    VehicleContronller.displayVehicle();
+                    VehicleController.displayVehicle();
                     break;
                 case 3:
-                       VehicleContronller.deleteVehicle();
-                       break;
+                    VehicleController.deleteVehicle();
+                    break;
                 case 4:
+                    System.out.println("xin chào hẹn gặp lại!");
                     System.exit(0);
 
             }
@@ -65,14 +67,17 @@ public class VehicleContronller {
                 case 1:
                     Truck trucks = TruckView.addTruck();
                     truckService.add(trucks);
+                    System.out.println("Bạn thêm xe thàng công!");
                     break;
                 case 2:
                     Car cars = CarView.addCar();
                     carService.add(cars);
+                    System.out.println("Bạn thêm xe thàng công!");
                     break;
                 case 3:
                     Motorbike motorbikes = MotorbikeView.addMotorbike();
                     motorbikeService.add(motorbikes);
+                    System.out.println("Bạn thêm xe thàng công!");
                     break;
                 case 4:
                     flag = false;
@@ -97,15 +102,15 @@ public class VehicleContronller {
             int choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
                 case 1:
-                    Truck[] trucks = truckService.findAll();
+                    List<Truck> trucks = truckService.findAll();
                     TruckView.displayTruck(trucks);
                     break;
                 case 2:
-                    Car[] cars = carService.findAll();
+                    List<Car> cars = carService.findAll();
                     CarView.displayCar(cars);
                     break;
                 case 3:
-                    Motorbike[] motorbikes = motorbikeService.findAll();
+                    List<Motorbike> motorbikes = motorbikeService.findAll();
                     MotorbikeView.displayMotorbike(motorbikes);
                     break;
                 case 4:
@@ -118,12 +123,12 @@ public class VehicleContronller {
     public static void deleteVehicle(){
         String licensePlate = View.inputLicensePlate();
         boolean check = false;
-        Car[] cars = carService.findAll();
-        Truck[] trucks = truckService.findAll();
-        Motorbike[] motorbikes = motorbikeService.findAll();
-        for (int i = 0; i < cars.length; i++){
-            if(cars[i] != null){
-                if(cars[i].getControlPlate().equals(licensePlate)){
+        List<Car> cars = carService.findAll();
+        List<Truck> trucks = truckService.findAll();
+        List<Motorbike> motorbikes = motorbikeService.findAll();
+        for (int i = 0; i < cars.size(); i++){
+            if(cars.get(i) != null){
+                if(cars.get(i).getControlPlate().equals(licensePlate)){
                     carService.delete(i);
                     check = true;
                     System.out.println(" Bạn đã xóa thành công");
@@ -133,9 +138,9 @@ public class VehicleContronller {
             }
         }
         if(check == false){
-            for (int i = 0; i < trucks.length; i++){
-                if(trucks[i] != null){
-                    if(trucks[i].getControlPlate().equals(licensePlate)){
+            for (int i = 0; i < trucks.size(); i++){
+                if(trucks.get(i) != null){
+                    if(trucks.get(i).getControlPlate().equals(licensePlate)){
                         truckService.delete(i);
                         check = true;
                         System.out.println(" Bạn đã xóa thành công");
@@ -147,9 +152,9 @@ public class VehicleContronller {
         }
 
         if(check == false){
-            for (int i = 0; i < motorbikes.length; i++){
-                if(motorbikes[i] != null){
-                    if(motorbikes[i].getControlPlate().equals(licensePlate)){
+            for (int i = 0; i < motorbikes.size(); i++){
+                if(motorbikes.get(i) != null){
+                    if(motorbikes.get(i).getControlPlate().equals(licensePlate)){
                         motorbikeService.delete(i);
                         check = true;
                         System.out.println(" Bạn đã xóa thành công");
