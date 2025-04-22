@@ -18,26 +18,25 @@ public class FuramaController {
             int choose = scanner.nextInt();
             switch (choose){
                 case 1:
-                    System.out.println("1. Hiển thị danh sách nhân viên"+
-                                       "2. Thêm nhân viên mới "+
-                                       "3. Chỉnh sửa nhân viên "+
-                                       "4. Quay lại Menu ");
-
+                    SubMenu.employeeManagement();
+                    break;
                 case 2:
-                    System.out.println("1. Hiển thị danh sách khách hàng"+
-                            "2. Thêm nhân khách hàng mới "+
-                            "3. Chỉnh sửa khách hành "+
-                            "4. Quay lại Menu ");
+                    SubMenu.customerManagement();
+                    break;
                 case 3:
+                    SubMenu.facilityManagement();
+                    break;
                 case 4:
+                    SubMenu.bookingManagement();
+                    break;
                 case 5:
+                    SubMenu.promotionManagement();
+                    break;
                 case 6:
-
+                      System.exit(0);
             }
         }while (true);
 
-
-
-
     }
+
 }

@@ -24,7 +24,7 @@ public class ProductManagement {
 //            }
 //        });
 
-        Arrays.sort(products, (p1, p2) -> p1.getId() - p2.getId());   //theo ID (nâng cao)
+       Arrays.sort(products, (p1, p2) -> p1.getId() - p2.getId());   //theo ID (nâng cao)
       //  Arrays.sort(products,(p1,p2)->p1.getName().compareTo(p2.getName()));  //theo tên (nâng cao)
 
         for (int i = 0; i < products.length; i++) {

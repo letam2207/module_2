@@ -5,7 +5,7 @@ import java.util.Queue;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class Main {
+public class Menu {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Stack<String> stack = new Stack<>();
