@@ -5,7 +5,6 @@ import ss12_DSA_Set_Map.bai_tap.ArrayList_LinkedList.entity.Product;
 import ss12_DSA_Set_Map.bai_tap.ArrayList_LinkedList.service.ProductService;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class View {
@@ -58,4 +57,32 @@ public class View {
         productService.updateById(id, product);
     }
 
+    public static void arrangeProduct() {
+        boolean check = true;
+        while (check) {
+            ArrayList<Product> products = productService.findAll();
+            System.out.println("""
+                    1. Sắp xếp tăng dần theo giá\
+                    
+                    2. Sắp xếp giảm dần theo giá\
+                    
+                    3. thoát""");
+            int choice = Integer.parseInt(scanner.nextLine());
+            switch (choice) {
+                case 1:
+                    products.sort((p1, p2) -> (int) (p1.getPrice() - p2.getPrice()));
+                    displayProduct(products);
+                    break;
+                case 2:
+                    products.sort((p1, p2) -> (int) (p2.getPrice() - p1.getPrice()));
+                    displayProduct(products);
+                    break;
+                case 3:
+                    check = false;
+                default:
+                    System.out.println("vui lòng nhập đúng lựa chọn");
+            }
+        }
+
+    }
 }

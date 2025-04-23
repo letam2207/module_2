@@ -42,7 +42,7 @@ public class ProductController {
                     View.searchProduct();
                     break;
                 case 6:
-
+                    View.arrangeProduct();
 
             }
         } while (true);
