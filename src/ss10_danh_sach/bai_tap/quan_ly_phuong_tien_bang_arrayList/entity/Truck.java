@@ -31,4 +31,7 @@ public class Truck extends Vehicle {
                 "Tải trọng=" + load +
                 '}';
     }
+    public String getInfoToFIle3(){
+        return getControlPlate()+","+getManufacturingCompany()+","+getYearOfManufacture()+","+getOwner()+","+this.load;
+    }
 }

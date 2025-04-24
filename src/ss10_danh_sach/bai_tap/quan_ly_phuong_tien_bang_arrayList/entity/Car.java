@@ -46,4 +46,7 @@ public class Car extends Vehicle {
                 ", Số chỗ ngồi =" + numberOfSeats +
                 '}';
     }
+    public String getInfoToFIle1(){
+        return getControlPlate()+","+getManufacturingCompany()+","+getYearOfManufacture()+","+getOwner()+","+this.vehicleType+","+this.numberOfSeats;
+    }
 }

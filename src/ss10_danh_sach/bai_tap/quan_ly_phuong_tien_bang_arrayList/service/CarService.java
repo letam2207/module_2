@@ -22,8 +22,8 @@ public class CarService implements ICarRepository {
     }
 
     @Override
-    public void delete(int i) {
-        carRepository.delete(i);
+    public boolean delete(String i) {
+       return carRepository.delete(i);
     }
 }
 

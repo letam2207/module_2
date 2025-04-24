@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface IProductService {
-    ArrayList<Product> findAll();
+    List<Product> findAll();
     void add(Product product);
-    void delete(int id);
+    boolean delete(int id);
     ArrayList<Product> search(String name);
 
     void updateById(int id, Product product);

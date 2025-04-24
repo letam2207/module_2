@@ -5,6 +5,7 @@ import ss12_DSA_Set_Map.bai_tap.ArrayList_LinkedList.entity.Product;
 import ss12_DSA_Set_Map.bai_tap.ArrayList_LinkedList.service.ProductService;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class View {
@@ -15,7 +16,7 @@ public class View {
         ProductController.displayProduct();
     }
 
-    public static void displayProduct(ArrayList<Product> products) {
+    public static void displayProduct(List<Product> products) {
         for (int i = 0; i < products.size(); i++) {
             System.out.println(products.get(i));
         }
@@ -27,14 +28,19 @@ public class View {
         System.out.println("Nhập tên sản phẩm: ");
         String name = scanner.nextLine();
         System.out.println("Nhập giá: ");
-        double price = Double.parseDouble(scanner.nextLine());
+        int price = Integer.parseInt(scanner.nextLine());
         productService.add(new Product(id, name, price));
     }
 
     public static void deleteProduct() {
         System.out.println("Nhập ID cần xóa: ");
         int id = Integer.parseInt(scanner.nextLine());
-        productService.delete(id);
+        boolean check = productService.delete(id);
+        if (check){
+            System.out.println("xóa thành công");
+        }else {
+            System.out.println("không tìm thấy id");
+        }
     }
 
     public static void searchProduct() {
@@ -52,15 +58,16 @@ public class View {
         String name = scanner.nextLine();
         product.setName(name);
         System.out.println("Nhập giá mới: ");
-        double price = Double.parseDouble(scanner.nextLine());
+        int price = Integer.parseInt(scanner.nextLine());
         product.setPrice(price);
         productService.updateById(id, product);
+
     }
 
     public static void arrangeProduct() {
         boolean check = true;
         while (check) {
-            ArrayList<Product> products = productService.findAll();
+            ArrayList<Product> products = (ArrayList<Product>) productService.findAll();
             System.out.println("""
                     1. Sắp xếp tăng dần theo giá\
                     

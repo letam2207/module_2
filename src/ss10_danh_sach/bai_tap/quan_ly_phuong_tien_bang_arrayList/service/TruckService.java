@@ -22,7 +22,7 @@ public class TruckService implements ITruckService {
     }
 
     @Override
-    public void delete(int i) {
+    public void delete(String i) {
         truckRepository.delete(i);
     }
 }

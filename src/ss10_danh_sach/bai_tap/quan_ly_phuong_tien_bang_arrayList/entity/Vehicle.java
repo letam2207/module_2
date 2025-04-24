@@ -1,5 +1,7 @@
 package ss10_danh_sach.bai_tap.quan_ly_phuong_tien_bang_arrayList.entity;
 
+import java.util.Objects;
+
 public class Vehicle {
     private String controlPlate;
     private String manufacturingCompany;
@@ -57,5 +59,17 @@ public class Vehicle {
                 ", Năm sản xuất = '" + yearOfManufacture + '\'' +
                 ", Tên chủ xe ='" + owner + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Vehicle vehicle = (Vehicle) o;
+        return yearOfManufacture == vehicle.yearOfManufacture && Objects.equals(controlPlate, vehicle.controlPlate) && Objects.equals(manufacturingCompany, vehicle.manufacturingCompany) && Objects.equals(owner, vehicle.owner);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(controlPlate, manufacturingCompany, yearOfManufacture, owner);
     }
 }

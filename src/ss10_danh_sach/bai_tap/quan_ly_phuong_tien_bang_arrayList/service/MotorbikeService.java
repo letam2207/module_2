@@ -21,7 +21,7 @@ public class MotorbikeService implements IMotorbikeService {
     }
 
     @Override
-    public void delete(int i) {
+    public void delete(String i) {
         motorbikeRepository.delete(i);
     }
 }

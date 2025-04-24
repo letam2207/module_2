@@ -10,5 +10,5 @@ public interface IMotorbikeRepository {
     List<Motorbike> findAll();
     void add(Motorbike motorbike);
 
-    void delete(int i);
+    boolean delete(String i);
 }

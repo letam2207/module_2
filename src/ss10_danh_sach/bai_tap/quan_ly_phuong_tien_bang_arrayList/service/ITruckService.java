@@ -10,5 +10,5 @@ public interface ITruckService {
     List<Truck> findAll();
     void add(Truck truck);
 
-    void delete(int i);
+    void delete(String i);
 }

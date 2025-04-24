@@ -12,7 +12,7 @@ public class TruckView {
     public static Truck addTruck() {
         System.out.println("thêm xe mới");
         System.out.println("Nhập Biển số xe: ");
-        String controlPlate = scanner.nextLine();
+       String controlPlate = scanner.nextLine();
         System.out.println("Nhập hãng sản xuất: ");
         String company = scanner.nextLine();
         System.out.println("Nhập năm sản xuất: ");

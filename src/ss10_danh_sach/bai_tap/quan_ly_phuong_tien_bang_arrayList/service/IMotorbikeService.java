@@ -9,5 +9,5 @@ public interface IMotorbikeService  {
     List<Motorbike> findAll();
     void add(Motorbike motorbike);
 
-    void delete(int i);
+    void delete(String i);
 }

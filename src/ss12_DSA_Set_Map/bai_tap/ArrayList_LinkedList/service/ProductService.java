@@ -10,7 +10,7 @@ import java.util.List;
 public class ProductService implements IProductService{
     private IProductRepository productRepository = new ProductRepository();
     @Override
-    public ArrayList<Product> findAll() {
+    public List<Product> findAll() {
         return productRepository.findAll();
     }
 
@@ -20,8 +20,8 @@ public class ProductService implements IProductService{
     }
 
     @Override
-    public void delete(int id) {
-       productRepository.delete(id);
+    public boolean delete(int id) {
+       return productRepository.delete(id);
     }
 
     @Override

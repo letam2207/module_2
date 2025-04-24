@@ -35,7 +35,7 @@ public class ProductController {
                         View.deleteProduct();
                         break;
                 case 4:
-                    ArrayList<Product> products = productService.findAll();
+                    List<Product> products = productService.findAll();
                     View.displayProduct(products);
                     break;
                 case 5:

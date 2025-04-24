@@ -33,4 +33,7 @@ public class Motorbike extends Vehicle {
                 "phân khối =" + capacity +
                 '}';
     }
+    public String getInfoToFIle2(){
+        return getControlPlate()+","+getManufacturingCompany()+","+getYearOfManufacture()+","+getOwner()+","+this.capacity;
+    }
 }

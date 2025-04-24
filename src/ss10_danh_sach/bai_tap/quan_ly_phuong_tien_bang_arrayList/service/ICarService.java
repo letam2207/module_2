@@ -8,5 +8,5 @@ import java.util.List;
 public interface ICarService {
     List<Car> findAll();
     void add(Car car);
-    void delete(int i);
+    void delete(String i);
 }

@@ -9,5 +9,5 @@ public interface ITruckRepository {
     List<Truck> findAll();
     void add(Truck truck);
 
-    void delete(int i);
+    boolean delete(String i);
 }

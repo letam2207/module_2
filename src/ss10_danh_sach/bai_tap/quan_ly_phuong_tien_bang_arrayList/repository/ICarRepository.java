@@ -9,5 +9,5 @@ public interface ICarRepository {
     List<Car> findAll();
     void add(Car car);
 
-    void delete(int i);
+    boolean delete(String i);
 }
