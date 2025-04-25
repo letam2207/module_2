@@ -129,7 +129,7 @@ public class VehicleController {
         for (int i = 0; i < cars.size(); i++){
             if(cars.get(i) != null){
                 if(cars.get(i).getControlPlate().equals(licensePlate)){
-                    carService.delete(licensePlate);
+                    carService.delete(String.valueOf(i));
                     check = true;
                     System.out.println(" Bạn đã xóa thành công");
                 }
@@ -141,7 +141,7 @@ public class VehicleController {
             for (int i = 0; i < trucks.size(); i++){
                 if(trucks.get(i) != null){
                     if(trucks.get(i).getControlPlate().equals(licensePlate)){
-                        truckService.delete(licensePlate);
+                        truckService.delete(String.valueOf(i));
                         check = true;
                         System.out.println(" Bạn đã xóa thành công");
                     }
@@ -155,7 +155,7 @@ public class VehicleController {
             for (int i = 0; i < motorbikes.size(); i++){
                 if(motorbikes.get(i) != null){
                     if(motorbikes.get(i).getControlPlate().equals(licensePlate)){
-                        motorbikeService.delete(licensePlate);
+                        motorbikeService.delete(String.valueOf(i));
                         check = true;
                         System.out.println(" Bạn đã xóa thành công");
                     }
