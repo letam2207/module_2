@@ -95,4 +95,9 @@ public abstract class Person {
                 ", Email='" + Email + '\'' +
                 '}';
     }
+    public String getInfoFile(){
+        return this.id+","+this.name+","+this.dateOfBirth
+                +","+this.gender+","+this.idCard+","+this.phoneNumber
+                +","+this.Email;
+    }
 }

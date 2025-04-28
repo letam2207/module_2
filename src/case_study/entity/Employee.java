@@ -40,4 +40,7 @@ public class Employee extends Person {
     public void setSalary(int salary) {
         this.salary = salary;
     }
+    public String getInfoToFile1(){
+        return super.getInfoFile() + "," + this.customerType+ ","+this.address+","+this.salary;
+    }
 }

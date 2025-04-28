@@ -1,4 +1,4 @@
 package case_study.repository;
 
-public class HouseRepository {
+public class FacilityRepository {
 }

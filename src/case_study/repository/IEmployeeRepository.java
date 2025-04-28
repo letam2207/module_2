@@ -2,8 +2,10 @@ package case_study.repository;
 
 import case_study.entity.Employee;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface IEmployeeRepository {
-    ArrayList<Employee> find();
+    List<Employee> findAll();
+
+    void add(Employee employee);
 }
