@@ -31,5 +31,26 @@ public class EmployeeRepository implements IEmployeeRepository {
     }
 
 
+    private List<String> covertToStringArray(List<Employee> employeeList){
+        List<String> stringList = new ArrayList<>();
+        for (Employee e : employeeList){
+            stringList.add(e.getInfoToFile1());
+        }
+        return stringList;
+    }
+
+    @Override
+    public void updateById(int id, Employee employee) {
+        List<Employee> employeeList = findAll();
+        for (int i = 0; i <employeeList.size(); i++) {
+            if (employeeList.get(i).getId()==employee.getId()){
+                employeeList.set(i,employee);
+                break;
+            }
+        }
+        List<String> stringList = covertToStringArray(employeeList);
+        ReadAndWrite.writeFileCSV(EMPLOYEE_FILE,stringList,false);
+    }
+
 
 }
