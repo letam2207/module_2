@@ -8,9 +8,9 @@ public class Employee extends Person {
     public Employee() {
     }
 
-    public Employee(String customerType, String address,int id,
+    public Employee(String customerType, String address,String id,
                     String name, String dateOfBirth, String gender,
-                    int idCard, int phoneNumber, String email,int salary) {
+                    String idCard, String phoneNumber, String email,int salary) {
         super(id,name,dateOfBirth,gender,idCard,phoneNumber,email);
         this.customerType = customerType;
         this.address = address;
@@ -41,6 +41,6 @@ public class Employee extends Person {
         this.salary = salary;
     }
     public String getInfoToFile1(){
-        return super.getInfoFile() + "," + this.customerType+ ","+this.address+","+this.salary;
+        return super.getInfoToFile() + "," + this.customerType+ ","+this.address+","+this.salary;
     }
 }

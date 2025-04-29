@@ -40,4 +40,8 @@ public class Customer extends Person {
     public void setSalary(double salary) {
         this.salary = salary;
     }
+
+    public String getInfoToFile2(){
+        return super.getInfoToFile() + "," + this.qualification + "," + this.position + "," + this.salary;
+    }
 }
