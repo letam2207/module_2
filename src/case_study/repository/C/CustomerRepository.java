@@ -18,8 +18,8 @@ public class CustomerRepository implements ICustomerRepository {
         String[] array;
         for (int i = 0; i < stringList.size(); i++) {
             array = stringList.get(i).split(",");
-            Customer customer = new Customer(array[0], array[1], Integer.parseInt(array[2]), Integer.parseInt(array[3]), array[4], array[5]
-                    , array[6], Integer.parseInt(array[7]), Integer.parseInt(array[8]), array[9]);
+            Customer customer = new Customer(array[0], array[1],Integer.parseInt(array[2]), array[3], array[4], array[5]
+                    , array[6], array[7], array[8], array[9]);
             customerList.add(customer);
         }
 

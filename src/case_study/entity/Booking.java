@@ -11,7 +11,7 @@ public class Booking extends Person {
     }
 
     public Booking(int bookingId, String bookingDate, String bookingStartDate
-            , String bookingStopDate, int serviceId,int id) {
+            , String bookingStopDate, int serviceId,String id) {
         super(id);
         this.bookingId = bookingId;
         this.bookingDate = bookingDate;
