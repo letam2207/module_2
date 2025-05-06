@@ -1,36 +1,36 @@
 package case_study.entity;
 
 public class Employee extends Person {
-    private String customerType;
-    private  String address;
+    private String position;
+    private  String level;
     int salary;
 
     public Employee() {
     }
 
-    public Employee(String customerType, String address,String id,
-                    String name, String dateOfBirth, String gender,
-                    String idCard, String phoneNumber, String email,int salary) {
+    public Employee(String id , String name, String dateOfBirth, String gender,
+                    String idCard , String phoneNumber, String email,
+                    String level , String position,int salary) {
         super(id,name,dateOfBirth,gender,idCard,phoneNumber,email);
-        this.customerType = customerType;
-        this.address = address;
+        this.position = position;
+        this.level = level;
         this.salary = salary;
     }
 
-    public String getCustomerType() {
-        return customerType;
+    public String getPosition() {
+        return position;
     }
 
-    public void setCustomerType(String customerType) {
-        this.customerType = customerType;
+    public void setPosition(String position) {
+        this.position = position;
     }
 
-    public String getAddress() {
-        return address;
+    public String getLevel() {
+        return level;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setLevel(String level) {
+        this.level = level;
     }
 
     public int getSalary() {
@@ -41,6 +41,16 @@ public class Employee extends Person {
         this.salary = salary;
     }
     public String getInfoToFile1(){
-        return super.getInfoToFile() + "," + this.customerType+ ","+this.address+","+this.salary;
+        return super.getInfoToFile() + "," + this.position + ","+this.level +","+this.salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                super.toString()+
+                "position='" + position + '\'' +
+                ", level='" + level + '\'' +
+                ", salary=" + salary +
+                '}';
     }
 }

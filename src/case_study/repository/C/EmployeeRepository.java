@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeRepository implements IEmployeeRepository {
-    private final String EMPLOYEE_FILE = "";
+    private final String EMPLOYEE_FILE = "case_study/data/employee.csv";
     @Override
     public List<Employee> findAll() {
         List<Employee> employeeList = new ArrayList<>();
@@ -16,9 +16,9 @@ public class EmployeeRepository implements IEmployeeRepository {
         String[] array;
         for (int i = 0; i < stringList.size(); i++) {
             array = stringList.get(i).split(",");
-            Employee employee = new Employee(array[0], array[1], array[3]
-                    , array[4], array[5], array[6], array[7],
-                    array[8], array[9], Integer.parseInt(array[10]));
+            Employee employee = new Employee(array[0], array[1], array[2]
+                    , array[3], array[4], array[5], array[6],
+                    array[7], array[8], Integer.parseInt(array[9]));
             employeeList.add(employee);
         }
         return employeeList;
@@ -41,16 +41,27 @@ public class EmployeeRepository implements IEmployeeRepository {
     }
 
     @Override
-    public void updateEmployeeById(int id, Employee employee) {
+    public void updateEmployeeById(Employee employee) {
         List<Employee> employeeList = findAll();
-        for (int i = 0; i <employeeList.size(); i++) {
-            if (employeeList.get(i).getId()==employee.getId()){
+        for (int i = 0; i < employeeList.size(); i++) {
+            if (employeeList.get(i).getId().equals(employee.getId())){
                 employeeList.set(i,employee);
                 break;
             }
         }
         List<String> stringList = covertToStringArray(employeeList);
         ReadAndWrite.writeFileCSV(EMPLOYEE_FILE,stringList,false);
+    }
+
+    @Override
+    public Employee findId(String id) {
+        List<Employee> employees = findAll();
+      for (Employee e : employees){
+          if (e.getId().equals(id)){
+              return e;
+          }
+      }
+        return null;
     }
 
 

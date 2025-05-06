@@ -86,16 +86,15 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "id=" + id +
+        return "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", dateOfBirth='" + dateOfBirth + '\'' +
                 ", gender='" + gender + '\'' +
-                ", idCard=" + idCard +
-                ", phoneNumber=" + phoneNumber +
-                ", Email='" + Email + '\'' +
-                '}';
+                ", idCard='" + idCard + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", Email='" + Email + '\'';
     }
+
     public String getInfoToFile(){
         return this.id+","+this.name+","+this.dateOfBirth
                 +","+this.gender+","+this.idCard+","+this.phoneNumber

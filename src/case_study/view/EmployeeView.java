@@ -107,4 +107,94 @@ public class EmployeeView {
         employeeService.add(new Employee(employeeId, employeeName, employeeDate, employeeGender, employeeIdCard
                 , employeeNumberPhone, email, leve, position, salary));
     }
+    public static void updateEmployeeById(){
+        System.out.println("Nhập mã nhân viên muốn thay đổi : ");
+        String id = scanner.nextLine();
+        Employee employee = employeeService.findId(id);
+        String employeeName;
+        String nameRegex = "^[A-Z][a-z]*\\s([A-Z][a-z]*\\s)*[A-Z][a-z]*$";
+        Pattern pattern2 = Pattern.compile(nameRegex);
+        do {
+            System.out.println(" nhập tên muốn sửa : ");
+            employeeName = scanner.nextLine();
+            Matcher matcher = pattern2.matcher(employeeName);
+            if (matcher.matches()) {
+                break;
+            } else {
+                System.out.println("sai định dạng nhập lại");
+            }
+        } while (true);
+        employee.setName(employeeName);
+
+        String employeeDate;
+        String dateRegex = "^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}$";
+        Pattern pattern3 = Pattern.compile(dateRegex);
+        do {
+            System.out.println(" nhập lại ngày tháng năm sinh : ");
+            employeeDate = scanner.nextLine();
+            Matcher matcher = pattern3.matcher(employeeDate);
+            if (matcher.matches()) {
+                break;
+            } else {
+                System.out.println("sai định dạng nhập lại");
+            }
+        } while (true);
+        employee.setDateOfBirth(employeeDate);
+
+        System.out.println("nhập lại giới tính : ");
+        String employeeGender = scanner.nextLine();
+        employee.setGender(employeeGender);
+
+        String employeeIdCard;
+        String idCardRegex = "^[0-9]{9}([0-9]{3})?$";
+        Pattern pattern4 = Pattern.compile(idCardRegex);
+        do {
+            System.out.println(" nhập lại CCCD : ");
+            employeeIdCard = scanner.nextLine();
+            Matcher matcher = pattern4.matcher(employeeIdCard);
+            if (matcher.matches()) {
+                break;
+            } else {
+                System.out.println("sai định dạng nhập lại");
+            }
+        } while (true);
+        employee.setIdCard(employeeIdCard);
+        String employeeNumberPhone;
+        String numberPhonedRegex = "^0[0-9]{9}$";
+        Pattern pattern5 = Pattern.compile(numberPhonedRegex);
+        do {
+            System.out.println(" nhập lại số điện thoại : ");
+            employeeNumberPhone = scanner.nextLine();
+            Matcher matcher = pattern5.matcher(employeeNumberPhone);
+            if (matcher.matches()) {
+                break;
+            } else {
+                System.out.println("sai định dạng nhập lại");
+            }
+        } while (true);
+        employee.setPhoneNumber(employeeNumberPhone);
+
+        System.out.println("Nhập lại Email : ");
+        String email = scanner.nextLine();
+        employee.setEmail(email);
+        System.out.println("Nhập lại trình độ : ");
+        String leve = scanner.nextLine();
+        employee.setLevel(leve);
+        System.out.println("Nhập lại vị trí : ");
+        String position = scanner.nextLine();
+        employee.setPosition(position);
+        int salary;
+        do {
+            System.out.println("nhâp lại lương : ");
+            salary = scanner.nextInt();
+            if (salary < 0) {
+                System.out.println("sai định dạng nhập lại");
+            } else {
+                break;
+            }
+        } while (true);
+        employee.setSalary(salary);
+        employeeService.updateEmployeeById(employee);
+    }
+
 }

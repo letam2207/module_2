@@ -8,5 +8,6 @@ import java.util.List;
 public interface ICustomerService {
     List<Customer> findAll();
     void add(Customer customer);
-    void updateCustomerById(int id,Customer customer);
+    void updateCustomerById(Customer customer);
+    Customer findId(String id);
 }

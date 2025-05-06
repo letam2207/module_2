@@ -5,6 +5,7 @@ import case_study.repository.C.EmployeeRepository;
 import case_study.repository.I.IEmployeeRepository;
 import case_study.service.I.IEmployeeService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeService implements IEmployeeService {
@@ -20,7 +21,12 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
-    public void updateEmployeeById(int id, Employee employee) {
-      employeeRepository.updateEmployeeById(id,employee);
+    public void updateEmployeeById(Employee employee) {
+      employeeRepository.updateEmployeeById(employee);
+    }
+
+    @Override
+    public Employee findId(String id) {
+        return employeeRepository.findId(id);
     }
 }

@@ -8,9 +8,9 @@ public class Customer extends Person {
     public Customer() {
     }
 
-    public Customer(String qualification, String position,
-                    int salary,String id, String name, String dateOfBirth, String gender,
-                    String idCard, String phoneNumber, String email) {
+    public Customer(String id, String name, String dateOfBirth, String gender,
+                    String idCard, String phoneNumber, String email,String qualification, String position,
+                    int salary) {
         super(id,name,dateOfBirth,gender,idCard,phoneNumber,email);
         this.qualification = qualification;
         this.position = position;
@@ -43,5 +43,15 @@ public class Customer extends Person {
 
     public String getInfoToFile2(){
         return super.getInfoToFile() + "," + this.qualification + "," + this.position + "," + this.salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                super.toString()+
+                "qualification='" + qualification + '\'' +
+                ", position='" + position + '\'' +
+                ", salary=" + salary +
+                '}';
     }
 }

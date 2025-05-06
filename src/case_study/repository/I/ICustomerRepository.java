@@ -9,5 +9,7 @@ public interface ICustomerRepository {
 
     void add(Customer customer);
 
-    void updateCustomerById(int id, Customer customer);
+    void updateCustomerById(Customer customer);
+
+    Customer findId(String id);
 }

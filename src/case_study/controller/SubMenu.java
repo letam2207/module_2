@@ -1,22 +1,34 @@
 package case_study.controller;
 
+import case_study.entity.Employee;
+import case_study.service.C.EmployeeService;
+import case_study.view.EmployeeView;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class SubMenu {
     static Scanner scanner = new Scanner(System.in);
-
+    public static EmployeeService employeeService = new EmployeeService();
     public static void employeeManagement() {
         System.out.println("1. Hiển thị danh sách nhân viên" +
-                "\n 2. Thêm nhân viên mới " +
-                "\n 3. Chỉnh sửa nhân viên " +
-                "\n 4. Quay lại Menu ");
+                        "\n 2. Thêm nhân viên mới " +
+                        "\n 3. Chỉnh sửa nhân viên " +
+                        "\n 4. Quay lại Menu ");
         int choose = scanner.nextInt();
         switch (choose) {
             case 1:
-
+                List<Employee> employees = employeeService.findAll();
+                EmployeeView.displayEmployee(employees);
+                break;
             case 2:
+                EmployeeView.addEmployee();
+                break;
             case 3:
+                EmployeeView.updateEmployeeById();
+                break;
             case 4:
+                break;
         }
     }
 

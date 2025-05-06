@@ -19,7 +19,12 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public void updateCustomerById(int id, Customer customer) {
-      customerRepository.updateCustomerById(id,customer);
+    public void updateCustomerById( Customer customer) {
+      customerRepository.updateCustomerById(customer);
+    }
+
+    @Override
+    public Customer findId(String id) {
+        return customerRepository.findId(id);
     }
 }

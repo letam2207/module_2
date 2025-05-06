@@ -17,5 +17,4 @@ public interface IProductRepository {
     ArrayList<Product> findByName(String name);
 
     void updateById(int id, Product product);
-
 }
